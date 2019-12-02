@@ -118,7 +118,4 @@ EOF
   fi
 fi
 
-# Set "yarn mode" in interpreter configuration
-#patch /zeppelin/conf/interpreter.json /root/interpreter.json.patch
-
 exit $?
