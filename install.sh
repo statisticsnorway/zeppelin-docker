@@ -118,4 +118,7 @@ EOF
   fi
 fi
 
+# Install custom SSB python library
+pip install ssb-pseudonymization
+
 exit $?
