@@ -8,23 +8,7 @@ Docker image is based on `docker.io/apache/zeppelin:0.8.2`.
 
 ### Building
 
-Update upstream docker image:
-
-````console
-docker pull apache/zeppelin:0.8.2
-````
-
-Build image:
-
-````console
-docker build -t eu.gcr.io/prod-bip/ssb/zeppelin:0.8.2-1 .
-````
-
-Push image to GCR project registry:
-
-````console
-docker push eu.gcr.io/prod-bip/ssb/zeppelin:0.8.2-1
-````
+Build with Drone.
 
 ### Configuration
 
