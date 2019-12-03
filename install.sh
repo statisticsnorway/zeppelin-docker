@@ -119,6 +119,6 @@ EOF
 fi
 
 # Install custom SSB python library
-pip install ssb-pseudonymization
+pip install git+https://github.com/statisticsnorway/ssb-pseudonymization-py
 
 exit $?
