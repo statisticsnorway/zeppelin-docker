@@ -1,0 +1,39 @@
+kind: pipeline
+name: zeppelin-docker
+
+steps:
+  - name: publish-docker
+    image: plugins/gcr
+    settings:
+      repo: prod-bip/ssb/zeppelin
+      registry: eu.gcr.io
+      tags: "${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:8}"
+      json_key:
+        from_secret: gcr_credentials
+    when:
+      branch:
+        - master
+      event:
+        - push
+
+  - name: slack
+    image: plugins/slack
+    settings:
+      webhook:
+        from_secret: slack_webhook_url
+    when:
+      status: [ success, failure ]
+
+---
+kind: secret
+name: gcr_credentials
+get:
+  path: drone-gcr-credentials
+  name: gcr-credentials
+
+---
+kind: secret
+name: slack_webhook_url
+get:
+  path: drone-slack-webhook-url
+  name: slack-webhook-url
