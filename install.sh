@@ -124,4 +124,6 @@ cd /opt/conda/lib/python2.7/site-packages
 zip -r ssb_pseudonymization.zip ssb_pseudonymization
 mv ssb_pseudonymization.zip /zeppelin/interpreter/spark/pyspark/.
 
+export PYTHONPATH=/zeppelin/interpreter/spark/pyspark/ssb_pseudonymization.zip
+
 exit $?
