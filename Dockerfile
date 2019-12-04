@@ -11,3 +11,4 @@ RUN /root/install.sh
 ADD interpreter.json /zeppelin/conf/interpreter.json
 ADD zeppelin-site.xml /zeppelin/conf/zeppelin-site.xml
 
+ENV SPARK_SUBMIT_OPTIONS "--files /zeppelin/ssb-pseudo-lib.zip"
