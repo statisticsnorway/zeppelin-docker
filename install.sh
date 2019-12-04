@@ -120,5 +120,8 @@ fi
 
 # Install custom SSB python library
 pip install ssb-pseudonymization
+cd /opt/conda/lib/python2.7/site-packages
+zip -r ssb_pseudonymization.zip ssb_pseudonymization
+mv ssb_pseudonymization.zip /zeppelin/interpreter/spark/pyspark/.
 
 exit $?
