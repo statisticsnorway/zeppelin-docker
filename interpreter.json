@@ -1182,7 +1182,7 @@
         },
         "zeppelin.pyspark.python": {
           "name": "zeppelin.pyspark.python",
-          "value": "python",
+          "value": "/opt/conda/default/bin/python",
           "type": "string"
         },
         "args": {
