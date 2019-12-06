@@ -1332,7 +1332,12 @@
           }
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        {
+          "groupArtifactVersion": "/zeppelin/lib/gcs-connector-hadoop.jar",
+          "local": false
+        }
+      ],
       "option": {
         "remote": true,
         "port": -1,
@@ -1427,12 +1432,7 @@
           }
         }
       ],
-      "dependencies": [
-        {
-          "groupArtifactVersion": "/zeppelin/lib/gcs-connector-hadoop.jar",
-          "local": false
-        }
-      ],
+      "dependencies": [],
       "option": {
         "remote": true,
         "port": -1,
