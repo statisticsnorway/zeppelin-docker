@@ -1260,8 +1260,8 @@
           "value": true,
           "type": "checkbox"
         },
-        "spark.hadoop.google.cloud.auth.service.account.json.keyfile": {
-          "value": "/gcloud/key.json",
+        "spark.jars": {
+          "value": "/zeppelin/lib/gcs-connector-hadoop.jar",
           "type": "string"
         }
       },
@@ -1332,12 +1332,7 @@
           }
         }
       ],
-      "dependencies": [
-        {
-          "groupArtifactVersion": "/zeppelin/lib/gcs-connector-hadoop.jar",
-          "local": false
-        }
-      ],
+      "dependencies": [],
       "option": {
         "remote": true,
         "port": -1,
