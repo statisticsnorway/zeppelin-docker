@@ -1251,6 +1251,18 @@
         "spark.submit.pyFiles": {
           "value": "/zeppelin/ssb-library.zip",
           "type": "string"
+        },
+        "spark.hadoop.fs.gs.impl": {
+          "value": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
+          "type": "string"
+        },
+        "spark.hadoop.google.cloud.auth.service.account.enable": {
+          "value": true,
+          "type": "checkbox"
+        },
+        "spark.hadoop.google.cloud.auth.service.account.json.keyfile": {
+          "value": "/gcloud/key.json",
+          "type": "string"
         }
       },
       "status": "READY",
@@ -1415,7 +1427,12 @@
           }
         }
       ],
-      "dependencies": [],
+      "dependencies": [
+        {
+          "groupArtifactVersion": "/zeppelin/lib/gcs-connector-hadoop.jar",
+          "local": false
+        }
+      ],
       "option": {
         "remote": true,
         "port": -1,

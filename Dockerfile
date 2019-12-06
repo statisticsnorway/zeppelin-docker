@@ -9,3 +9,6 @@ RUN /root/install.sh
 
 ADD interpreter.json /zeppelin/conf/interpreter.json
 ADD zeppelin-site.xml /zeppelin/conf/zeppelin-site.xml
+
+RUN wget https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop2-latest.jar
+RUN mv gcs-connector-hadoop2-latest.jar lib/gcs-connector-hadoop.jar
