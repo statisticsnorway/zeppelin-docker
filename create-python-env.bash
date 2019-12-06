@@ -1,13 +1,46 @@
 #!/bin/bash
 
-# Install custom SSB python library
+python_version_major=2.7
+python_version=${python_version_major}.13
+
+echo -e '\033[0;32m--- Install custom SSB python library (standard python) --- \033[0m'
+pwd
+pip install ssb-pseudonymization
+
+# Install custom SSB python library with conda env
+# This also takes care of dependencies
+echo -e '\033[0;32m--- Initialising conda env ---\033[0m'
 conda init bash
 source /root/.bashrc
-# https://conda.anaconda.org/conda-forge/linux-64/current_repodata.json
-conda create -n ssb-env python=2.7.13 pip
-conda activate ssb-env
+conda create -n ssb-env python=$python_version_major pip
+echo -e '\033[0;32m--- Activate ssb-env ---\033[0m'
+source activate ssb-env
+conda env list
 pip install ssb-pseudonymization
+echo -e '\033[0;32m--- Packaging ssb-env ---\033[0m'
 conda package --pkg-name ssb-env
-mv ssb-env*.tar.bz2 ssb-library.tar.bz2
+if [ ! -r ssb-env-*.tar.bz2 ]
+then
+    echo -e "\033[0;31m--- Packaging ssb-env failed ---\033[0m"
+    exit 1
+fi
+
+# Create a zip file of the environment (including dependencies)
+# This zip file will be distributed to the yarn cluster, and used by pyspark
+echo -e '\033[0;32m--- Creating zip file ---\033[0m'
+tar -xvf ssb-env-*.tar.bz2 --strip-components=2 lib/python$python_version_major/site-packages/
+if [ ! -r site-packages ]
+then
+    echo "\033[0;31m--- Extracting ssb-env failed (site-packages not found) ---\033[0m"
+    exit 1
+fi
+
+cd site-packages/
+zip -9r ../ssb-library.zip .
+
+cd ..
+rm ssb-env-*.tar.bz2
+rm -R site-packages
 
 exit $?
+

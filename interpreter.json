@@ -1237,11 +1237,19 @@
         },
         "spark.cores.max": {
           "name": "spark.cores.max",
-          "value": "",
+          "value": "ssb-library.zip",
           "type": "number"
+        },
+        "spark.files": {
+          "value": "",
+          "type": "string"
         },
         "spark.submit.deployMode": {
           "value": "cluster",
+          "type": "string"
+        },
+        "spark.submit.pyFiles": {
+          "value": "/zeppelin/ssb-library.zip",
           "type": "string"
         }
       },
