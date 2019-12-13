@@ -4,6 +4,8 @@ WORKDIR /
 
 COPY ./files/. /
 
+WORKDIR /zeppelin
+
 RUN wget -P /tmp https://apache.uib.no/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
 RUN tar zxf /tmp/hadoop-2.7.7.tar.gz -C /usr/lib/
 RUN ln -sf /usr/lib/hadoop-2.7.7 /usr/lib/hadoop
@@ -21,7 +23,5 @@ RUN ln -sf /etc/hadoop/mapred-site.xml /usr/lib/hadoop/etc/hadoop/mapred-site.xm
 
 RUN /root/create-python-env.bash
 
-RUN wget https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop2-latest.jar
-RUN mv gcs-connector-hadoop2-latest.jar lib/gcs-connector-hadoop.jar
-
-WORKDIR /zeppelin
+RUN wget -P /tmp https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop2-latest.jar
+RUN mv /tmp/gcs-connector-hadoop2-latest.jar /zeppelin/lib/gcs-connector-hadoop.jar
