@@ -1256,12 +1256,16 @@
           "value": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
           "type": "string"
         },
+        "spark.hadoop.fs.gs.delegation.token.binding": {
+          "value": "no.ssb.dapla.gcs.token.delegation.BrokerDelegationTokenBinding",
+          "type": "string"
+        },
         "spark.hadoop.google.cloud.auth.service.account.enable": {
           "value": true,
           "type": "checkbox"
         },
         "spark.jars": {
-          "value": "/zeppelin/lib/gcs-connector-hadoop.jar",
+          "value": "/zeppelin/dapla-spark-plugin.jar,/zeppelin/lib/gcs-connector-hadoop.jar",
           "type": "string"
         }
       },
