@@ -12,8 +12,9 @@ Build with Drone.
 
 ### Configuration
 
-The "install.sh" script will install Spark and Hadoop binaries and create symlinks to Hadoop configuration files. The linked files (source) will be supplied by Kubernetes as volume mounts and will hence not exist until deployed by Kubernetes using BIP automation.
+Run
 
-The "interpreter.json" file was only added to set the yarn mode to "cluster", but this is a temporary solution until a better method is implemented.
+    mvn dependency:copy-dependencies -DoutputDirectory=files/zeppelin/lib
 
-The "zeppelin-site.xml" was added to increase the `zeppelin.server.jetty.request.header.size` setting in order to be able to forward HTTP Headers (Authorization) from the oauth2 proxy.
+to add pac4j libraries
+
