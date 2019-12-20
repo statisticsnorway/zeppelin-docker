@@ -20,6 +20,7 @@ RUN ln -sf /etc/hadoop/yarn-site.xml /usr/lib/hadoop/etc/hadoop/yarn-site.xml
 RUN ln -sf /etc/hadoop/core-site.xml /usr/lib/hadoop/etc/hadoop/core-site.xml
 RUN ln -sf /etc/hadoop/hdfs-site.xml /usr/lib/hadoop/etc/hadoop/hdfs-site.xml
 RUN ln -sf /etc/hadoop/mapred-site.xml /usr/lib/hadoop/etc/hadoop/mapred-site.xml
+RUN ln -sf /zeppelin/notebook/notebook-authorization.json /zeppelin/conf/notebook-authorization.json
 
 RUN /root/create-python-env.bash
 
