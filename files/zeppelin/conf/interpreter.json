@@ -1252,12 +1252,20 @@
           "value": "/zeppelin/ssb-library.zip",
           "type": "string"
         },
+        "spark.ssb.dapla.gcs.storage": {
+          "value": "gs://ssb-data-staging/data",
+          "type": "string"
+        },
         "spark.hadoop.fs.gs.impl": {
           "value": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
           "type": "string"
         },
         "fs.gs.impl.disable.cache": {
           "value": "true",
+          "type": "string"
+        },
+        "spark.ssb.dapla.router.url": {
+          "value": "https://dapla-spark.staging-bip-app.ssb.no/",
           "type": "string"
         },
         "spark.hadoop.fs.gs.delegation.token.binding": {
