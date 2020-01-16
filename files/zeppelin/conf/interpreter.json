@@ -1253,7 +1253,7 @@
           "type": "string"
         },
         "spark.ssb.dapla.gcs.storage": {
-          "value": "gs://ssb-data-staging/data",
+          "value": "gs://ssb-data-staging",
           "type": "string"
         },
         "spark.hadoop.fs.gs.impl": {
