@@ -1268,6 +1268,22 @@
           "value": "https://dapla-spark.staging-bip-app.ssb.no/",
           "type": "string"
         },
+        "spark.ssb.dapla.oauth.grantType": {
+          "value": "client_credential",
+          "type": "string"
+        },
+        "spark.ssb.dapla.oauth.tokenUrl": {
+          "value": "",
+          "type": "string"
+        },
+        "spark.ssb.dapla.oauth.clientId": {
+          "value": "",
+          "type": "string"
+        },
+        "spark.ssb.dapla.oauth.clientSecret": {
+          "value": "",
+          "type": "password"
+        },
         "spark.hadoop.fs.gs.delegation.token.binding": {
           "value": "no.ssb.dapla.gcs.token.delegation.BrokerDelegationTokenBinding",
           "type": "string"
