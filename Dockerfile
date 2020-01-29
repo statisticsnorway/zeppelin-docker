@@ -1,4 +1,6 @@
-FROM apache/zeppelin:0.8.2
+FROM eu.gcr.io/prod-bip/ssb/zeppelin:0.8.2-nonroot
+
+USER root
 
 WORKDIR /
 
@@ -23,6 +25,8 @@ RUN ln -sf /etc/hadoop/mapred-site.xml /usr/lib/hadoop/etc/hadoop/mapred-site.xm
 RUN ln -sf /zeppelin/notebook/notebook-authorization.json /zeppelin/conf/notebook-authorization.json
 
 RUN /root/create-python-env.bash
-
 RUN wget -P /tmp https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop2-latest.jar
 RUN mv /tmp/gcs-connector-hadoop2-latest.jar /zeppelin/lib/gcs-connector-hadoop.jar
+RUN chown -R zeppelin:zeppelin /zeppelin
+
+USER zeppelin
