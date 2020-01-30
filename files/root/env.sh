@@ -10,3 +10,5 @@ envsubst \
 	 $DAPLA_SPARK_OAUTH_CLIENT_ID \
 	 $DAPLA_SPARK_OAUTH_CLIENT_SECRET \
 	 ' < /zeppelin/conf/interpreter-template.json > /zeppelin/conf/interpreter.json
+
+/zeppelin/bin/zeppelin.sh
