@@ -13,6 +13,14 @@ folders/processes ownership. Exact Docekerfile used to build a new `nonroot`
 base image is placed in the root of the current repository, see
 `Dockerfile.base`
 
+**NB**
+
+New `eu.gcr.io/prod-bip/ssb/zeppelin:0.8.2-nonroot` includes following package
+updates:
+
+1.  numpy=1.13.3 --> numpy=1.14
+1.  scipy==0.18.0 --> scipy==1.0
+
 ### Building
 
 Build with Drone.
