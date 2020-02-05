@@ -27,6 +27,6 @@ RUN ln -sf /zeppelin/notebook/notebook-authorization.json /zeppelin/conf/noteboo
 RUN /root/create-python-env.bash
 RUN wget -P /tmp https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop2-latest.jar
 RUN mv /tmp/gcs-connector-hadoop2-latest.jar /zeppelin/lib/gcs-connector-hadoop.jar
-RUN chown -R zeppelin:zeppelin /zeppelin
+RUN chown zeppelin:zeppelin /zeppelin /zeppelin/conf /zeppelin/conf/interpreter.json
 
 USER zeppelin
