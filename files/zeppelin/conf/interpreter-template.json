@@ -1272,6 +1272,10 @@
           "value": "$DAPLA_SPARK_OAUTH_CREDENTIALS_FILE",
           "type": "string"
         },
+        "spark.yarn.dist.files": {
+          "value": "$DAPLA_SPARK_OAUTH_CREDENTIALS_FILE",
+          "type": "string"
+        },
         "spark.ssb.dapla.oauth.tokenUrl": {
           "value": "$DAPLA_SPARK_OAUTH_TOKEN_URL",
           "type": "string"
