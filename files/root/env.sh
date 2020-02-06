@@ -4,6 +4,7 @@ echo "Replacing environment variables"
 envsubst \
 	' \
 	 $DAPLA_SPARK_GCS_STORAGE \
+	 $DAPLA_SPARK_ACCESS_URL \
 	 $DAPLA_SPARK_ROUTER_URL \
 	 $DAPLA_SPARK_OAUTH_TOKEN_URL \
 	 $DAPLA_SPARK_OAUTH_CREDENTIALS_FILE \
