@@ -1,4 +1,6 @@
-FROM apache/zeppelin:0.8.2
+FROM eu.gcr.io/prod-bip/ssb/zeppelin:0.8.2-nonroot
+
+USER root
 
 WORKDIR /
 
@@ -30,6 +32,9 @@ ENV DAPLA_SPARK_ACCESS_URL=https://data-access.staging-bip-app.ssb.no
 
 RUN wget -P /tmp https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop2-latest.jar
 RUN mv /tmp/gcs-connector-hadoop2-latest.jar /zeppelin/lib/gcs-connector-hadoop.jar
+RUN chown -R zeppelin:zeppelin /zeppelin
+
+USER zeppelin
 
 WORKDIR /zeppelin
 CMD ["/root/env.sh"]
