@@ -8,7 +8,7 @@ COPY ./files/. /
 
 WORKDIR /zeppelin
 
-RUN wget -P /tmp https://apache.uib.no/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
+RUN wget -P /tmp http://apache.uib.no/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
 RUN tar zxf /tmp/hadoop-2.7.7.tar.gz -C /usr/lib/
 RUN ln -sf /usr/lib/hadoop-2.7.7 /usr/lib/hadoop
 RUN rm -f /tmp/hadoop-2.7.7.tar.gz
