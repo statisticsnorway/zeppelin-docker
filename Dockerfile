@@ -8,12 +8,12 @@ COPY ./files/. /
 
 WORKDIR /zeppelin
 
-RUN wget -P /tmp http://apache.uib.no/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
+RUN wget -P /tmp https://apache.uib.no/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
 RUN tar zxf /tmp/hadoop-2.7.7.tar.gz -C /usr/lib/
 RUN ln -sf /usr/lib/hadoop-2.7.7 /usr/lib/hadoop
 RUN rm -f /tmp/hadoop-2.7.7.tar.gz
 
-RUN wget -P /tmp http://apache.uib.no/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
+RUN wget -P /tmp https://apache.uib.no/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
 RUN tar zxf /tmp/spark-2.4.5-bin-hadoop2.7.tgz -C /usr/lib/
 RUN ln -sf /usr/lib/spark-2.4.5-bin-hadoop2.7 /usr/lib/spark
 RUN rm -f /tmp/spark-2.4.5-bin-hadoop2.7.tgz
