@@ -1265,7 +1265,7 @@
           "type": "string"
         },
         "spark.hadoop.fs.gs.impl": {
-          "value": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystemExt",
+          "value": "no.ssb.dapla.gcs.connector.GoogleHadoopFileSystemExt",
           "type": "string"
         },
         "fs.gs.impl.disable.cache": {
