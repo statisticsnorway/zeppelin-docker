@@ -1256,8 +1256,16 @@
           "value": "$DAPLA_SPARK_GCS_STORAGE",
           "type": "string"
         },
+        "spark.ssb.dapla.metadata.writer": {
+          "value": "no.ssb.dapla.spark.plugin.metadata.FilesystemMetaDataWriter",
+          "type": "string"
+        },
+        "spark.ssb.dapla.metadata.publisher.url": {
+          "value": "$DAPLA_SPARK_METADATA_PUBLISHER_URL",
+          "type": "string"
+        },
         "spark.hadoop.fs.gs.impl": {
-          "value": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
+          "value": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystemExt",
           "type": "string"
         },
         "fs.gs.impl.disable.cache": {
@@ -1265,11 +1273,7 @@
           "type": "string"
         },
         "spark.ssb.dapla.data.access.url": {
-          "value": "$DAPLA_SPARK_ACCESS_URL",
-          "type": "string"
-        },
-        "spark.ssb.dapla.router.url": {
-          "value": "$DAPLA_SPARK_ROUTER_URL",
+          "value": "$DAPLA_SPARK_DATA_ACCESS_URL",
           "type": "string"
         },
         "spark.ssb.dapla.oauth.credentials.file": {
