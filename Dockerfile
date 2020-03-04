@@ -27,8 +27,10 @@ RUN ln -sf /zeppelin/notebook/notebook-authorization.json /zeppelin/conf/noteboo
 RUN /root/create-python-env.bash
 
 ENV DAPLA_SPARK_GCS_STORAGE=gs://ssb-data-staging
-ENV DAPLA_SPARK_METADATA_PUBLISHER_URL=https://metadata-distributor.staging-bip-app.ssb.no
 ENV DAPLA_SPARK_DATA_ACCESS_URL=https://data-access.staging-bip-app.ssb.no
+ENV DAPLA_SPARK_METADATA_PUBLISHER_URL=https://metadata-distributor.staging-bip-app.ssb.no
+ENV DAPLA_SPARK_METADATA_PUBLISHER_PROJECT_ID=staging-bip
+ENV DAPLA_SPARK_METADATA_PUBLISHER_TOPIC_NAME=metadata-distributor-dataset-updates
 
 RUN wget -P /tmp https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop2-latest.jar
 RUN mv /tmp/gcs-connector-hadoop2-latest.jar /zeppelin/lib/gcs-connector-hadoop.jar
